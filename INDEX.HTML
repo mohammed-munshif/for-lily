@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Lily ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+
+body{
+min-height:100vh;
+background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+overflow:hidden;
+color:white;
+text-align:center;
+}
+
+/* Title */
+h1{
+font-family:'Dancing Script',cursive;
+font-size:60px;
+animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+from{text-shadow:0 0 10px #fff,0 0 20px #ff4d6d;}
+to{text-shadow:0 0 30px #fff,0 0 50px #ff1e56;}
+}
+
+.box{
+background:rgba(255,255,255,0.25);
+backdrop-filter:blur(10px);
+padding:20px;
+border-radius:20px;
+max-width:750px;
+margin:15px;
+}
+
+/* Buttons */
+button{
+padding:14px 30px;
+border:none;
+border-radius:30px;
+background:#ff1e56;
+color:white;
+cursor:pointer;
+margin-top:15px;
+font-size:16px;
+transition:0.3s;
+}
+
+button:hover{
+background:white;
+color:#ff1e56;
+transform:scale(1.1);
+}
+
+/* Letters */
+.letters{
+display:flex;
+gap:15px;
+justify-content:center;
+margin-top:20px;
+}
+
+.letter{
+width:55px;
+height:55px;
+background:white;
+color:#ff1e56;
+display:flex;
+justify-content:center;
+align-items:center;
+border-radius:12px;
+cursor:pointer;
+font-weight:bold;
+transition:0.3s;
+}
+
+.letter:hover{
+transform:scale(1.2);
+background:#ff1e56;
+color:white;
+}
+
+/* Popup */
+.popup{
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:white;
+color:#ff1e56;
+padding:30px;
+border-radius:25px;
+display:none;
+max-width:450px;
+z-index:10;
+}
+
+.close{cursor:pointer;margin-top:15px;font-weight:bold;}
+
+/* Rose */
+.rose{
+font-size:70px;
+animation:float 3s infinite ease-in-out;
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-20px);}
+100%{transform:translateY(0);}
+}
+
+/* Kiss Animation */
+#kiss{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,0.8);
+display:none;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+z-index:999;
+}
+
+#kiss span{
+font-size:90px;
+animation:kiss 3s infinite;
+}
+
+@keyframes kiss{
+0%{transform:scale(1);}
+50%{transform:scale(1.5);}
+100%{transform:scale(1);}
+}
+
+/* Hearts */
+.heart{
+position:absolute;
+font-size:22px;
+color:#ff1e56;
+animation:fall linear infinite;
+}
+
+@keyframes fall{
+0%{transform:translateY(-10vh);}
+100%{transform:translateY(110vh);}
+}
+</style>
+</head>
+
+<body>
+
+<audio autoplay loop>
+<source src="https://cdn.pixabay.com/audio/2022/03/15/audio_45a7a6c9a3.mp3">
+</audio>
+
+<h1>My Lily ❤️</h1>
+
+<div class="box">
+On <b>October 11, 2025</b>, I proposed to you…  
+and from that moment, my life became complete.  
+You are my happiness, my peace, my forever. 💕
+</div>
+
+<div class="box">
+<h3>⏳ Our Love Since That Day</h3>
+<p id="countdown"></p>
+</div>
+
+<button onclick="showRose()">Your Special Rose 🌹</button>
+
+<div class="letters">
+<div class="letter" onclick="openLetter('L')">L</div>
+<div class="letter" onclick="openLetter('I')">I</div>
+<div class="letter" onclick="openLetter('L2')">L</div>
+<div class="letter" onclick="openLetter('Y')">Y</div>
+</div>
+
+<h2 style="margin-top:40px;font-family:'Dancing Script',cursive;">
+Lily, will you continue this beautiful journey with me forever? 💍❤️
+</h2>
+
+<!-- YES FOREVER BUTTON -->
+<button onclick="forever()">YES, FOREVER 💖</button>
+
+<!-- POPUP -->
+<div class="popup" id="popup">
+<p id="content"></p>
+<div class="close" onclick="closePopup()">Close ❤️</div>
+</div>
+
+<!-- KISS SURPRISE -->
+<div id="kiss">
+<span>💋💋💋</span>
+<h1 style="margin-top:20px;">A long kiss just for you, Lily 😘❤️</h1>
+</div>
+
+<script>
+// Letters
+function openLetter(l){
+let msg="";
+if(l=="L") msg="L – Lily, your smile is my favorite sunrise ☀️";
+if(l=="I") msg="I – I love you not for who you are, but for who I become with you 💖";
+if(l=="L2") msg="L – Loving you since October 11, 2025 was destiny 🌸";
+if(l=="Y") msg="Y – You are my forever, my wife, my everything 💍";
+document.getElementById("content").innerHTML=msg;
+document.getElementById("popup").style.display="block";
+}
+
+function showRose(){
+document.getElementById("content").innerHTML=
+"<div class='rose'>🌹</div>This rose is for the most precious woman in my life. I promise to love you endlessly, Lily ❤️";
+document.getElementById("popup").style.display="block";
+}
+
+function closePopup(){
+document.getElementById("popup").style.display="none";
+}
+
+// Forever Kiss
+function forever(){
+document.getElementById("kiss").style.display="flex";
+setTimeout(()=>{ document.getElementById("kiss").style.display="none"; },8000);
+}
+
+// Countdown
+const start=new Date("2025-10-11");
+setInterval(()=>{
+const now=new Date();
+const diff=now-start;
+const d=Math.floor(diff/(1000*60*60*24));
+const h=Math.floor(diff/(1000*60*60)%24);
+const m=Math.floor(diff/(1000*60)%60);
+document.getElementById("countdown").innerHTML=
+`${d} Days ${h} Hours ${m} Minutes of Love ❤️`;
+},1000);
+
+// Hearts
+for(let i=0;i<30;i++){
+let h=document.createElement("div");
+h.className="heart";
+h.innerHTML="❤";
+h.style.left=Math.random()*100+"vw";
+h.style.animationDuration=(3+Math.random()*5)+"s";
+document.body.appendChild(h);
+}
+</script>
+
+</body>
+</html>
